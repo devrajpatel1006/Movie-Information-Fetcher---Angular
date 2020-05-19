@@ -3,4 +3,7 @@
 <div>
 <button (click)="dec()" title="smaller" >-</button>
 <button (click)="inc()" title="larger" >+</button>
+<label [style.font-size.px]="size">Fontsize: {{size}}px</label>
+
 </div>
+Counter value is :{{counter}}

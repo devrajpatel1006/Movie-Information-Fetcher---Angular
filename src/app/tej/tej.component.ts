@@ -9,7 +9,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 export class TejComponent implements OnInit {
   counter:number=0;
  @Input() size:number=23;
- @Output() sizeChange = new EventEmitter<number>();
+ @Output() sizeChange = new EventEmitter<Object>();
   
   constructor() { }
 
@@ -18,7 +18,7 @@ export class TejComponent implements OnInit {
 inc(){
   if(this.size>30)
   {
-    this.sizeChange.emit(this.size);
+    this.sizeChange.emit({size:this.size,type:2});
   }
  
  this.counter++; return ++this.size;

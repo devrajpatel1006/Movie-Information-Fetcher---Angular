@@ -11,6 +11,6 @@ export class AppComponent {
 
   sizeHandler($event  )
   {
-    alert($event);
+    alert($event.size);
   }
 }

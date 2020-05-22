@@ -6,3 +6,11 @@
  <div [ngStyle]="{'background-color':getColor()}">Testing ngStyle2</div>
  <div [style.backgroundColor]="getColor()">Testing ngStyle3</div>
  <div [ngStyle]="getColorObj()">Testing ngStyle 4</div> 
+ 
+ <h1>ngClass</h1>
+<div [ngClass]="{'makered':this.testObj.id<=1}">ngClass1</div>
+<div [ngClass]="{
+    'makered':this.testObj.price<100 ,
+     'makegrey':this.testObj.price>=100
+    }">ngClass2"</div>
+<div [class.makered]="this.testObj.price>=100">ngClass3</div>

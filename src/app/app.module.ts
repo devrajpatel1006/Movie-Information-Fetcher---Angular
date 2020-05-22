@@ -9,6 +9,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 //import { AboutComponent } from './about/about.component';
 import { PersonListComponent } from './person-list/person-list.component';
 import { PersonComponent } from './person/person.component';
+import { DirectivePraticeComponent } from './directive-pratice/directive-pratice.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { PersonComponent } from './person/person.component';
   //  AboutComponent,
        PersonComponent,
        PersonListComponent,
+       DirectivePraticeComponent,
   ],
   imports: [
     BrowserModule,

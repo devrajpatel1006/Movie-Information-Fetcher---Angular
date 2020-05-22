@@ -27,7 +27,7 @@ export class PersonListComponent implements OnInit {
   personCountHandled($event)
     {
 
-      this.selPersons++;
+      this.selPersons++;  
       // alert('f'+$event);
     }
 

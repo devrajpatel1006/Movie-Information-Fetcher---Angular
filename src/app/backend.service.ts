@@ -15,4 +15,12 @@ persons.push(new Person(3,"Shayam",500))
 persons.push(new Person(4,"Mohan",200)) 
 return persons;
 }
+validateUser(username:string,password:string):boolean{
+  if(username=="admin" && password=="admin")
+       return true;
+       else{
+         return false;
+       }
+}
+
 }

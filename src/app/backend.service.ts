@@ -17,7 +17,8 @@ return persons;
 }
 validateUser(username:string,password:string):boolean{
   if(username=="admin" && password=="admin")
-       return true;
+       return true
+
        else{
          return false;
        }

@@ -12,6 +12,7 @@ import { PersonComponent } from './person/person.component';
 import { DirectivePraticeComponent } from './directive-pratice/directive-pratice.component';
 import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component'
+import { TestClass } from './person';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,17 @@ import { LoginComponent } from './login/login.component'
     BrowserAnimationsModule,
     FormsModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: "MyToken",
+      useValue :123
+     } ,
+  {
+    provide :"MyTest",
+    useClass:TestClass
+  }
+
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

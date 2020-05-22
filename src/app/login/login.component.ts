@@ -8,13 +8,13 @@ import { BackendService } from '../backend.service';
 })
 export class LoginComponent implements OnInit {
   username:string;
-  passwrod:string;
+  password:string;
   message:string;
 
 
   constructor(private backend2:BackendService) {}
 
-  ngOnInit(): {  }
+  ngOnInit() {  }
   onLoginClicked()
   {
     var result = this.backend2.validateUser(this.username,this.password)

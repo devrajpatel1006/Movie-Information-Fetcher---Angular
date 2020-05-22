@@ -5,14 +5,12 @@ export class Person{
 
     }
 }
-
-// export class TestClass{
-//   public age:number= 0;
-//   constructor(){
-//     this.age = Math.random();
-//   }
-// }
-
+export class TestClass{
+  public age:number=0;
+  constructor(){
+    this.age=Math.random()
+  }
+}
 // export interface MoviesResponse {
 //   Search: Array<MovieResponse>;
 //   totalResults: number;

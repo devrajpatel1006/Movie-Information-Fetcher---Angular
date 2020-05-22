@@ -17,7 +17,12 @@ export class PersonListComponent implements OnInit {
   {}
   ngOnInit() {
 
-   this.persons=  this.backend2.getPersons();
+   //this.persons=  this.backend2.getPersons();
+    this.backend2.getPersons().subscribe(
+      m=>{
+        this.persons=m;
+      }
+    );
   
   }
 
@@ -31,7 +36,4 @@ export class PersonListComponent implements OnInit {
   }
 
   
-  
-    //   );
-  // }
   

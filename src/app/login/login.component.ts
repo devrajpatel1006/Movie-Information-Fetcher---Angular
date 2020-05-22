@@ -17,13 +17,19 @@ export class LoginComponent implements OnInit {
   ngOnInit() {  }
   onLoginClicked()
   {
-    var result = this.backend2.validateUser(this.username,this.password)
-    if(result)
-       this.message="Valid User";
-       else{
-         this.message="Invalid User";
-       }}
-  
+    // var result = this.backend2.validateUser(this.username,this.password)
+    this.backend2.validateUser(this.username,this.password).subscribe(
+      m=>{
+
+        if(m)
+        this.message="Valid User";
+        else{
+          this.message="Invalid User";
+        }}
+   
+   
+    )
+}
   onClear()
    {
      this.username="";

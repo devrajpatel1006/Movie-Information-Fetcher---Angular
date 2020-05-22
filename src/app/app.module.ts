@@ -10,7 +10,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PersonListComponent } from './person-list/person-list.component';
 import { PersonComponent } from './person/person.component';
 import { DirectivePraticeComponent } from './directive-pratice/directive-pratice.component';
-import { FormsModule } from '@angular/forms'
+import { FormsModule } from '@angular/forms';
+import { LoginComponent } from './login/login.component'
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { FormsModule } from '@angular/forms'
        PersonComponent,
        PersonListComponent,
        DirectivePraticeComponent,
+       LoginComponent,
  
       ],
   imports: [

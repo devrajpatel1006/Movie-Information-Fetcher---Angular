@@ -21,7 +21,7 @@
 <div *ngIf="(this.testObj.price <100);else else_content">ngIf example 2</div>
 
 
-<!--
+<!--    
 <ng-template #else_content>
 <div>this is else content of ngif example 2</div>
 <ng-template>
@@ -53,4 +53,17 @@
 <div>this is then if content of ngif example 3</div>
 <ng-template>
 -->
+
+<h1>ngFor</h1>
+<div *ngFor="let p of persons" class="box">
+ id:{{p.id}}<br>
+ name:{{p.name}}
+ </div>
+
+ <div *ngFor="let p of persons; let i=index" class="box">
+   index:{{i}}<br>
+   id:{{p.id}}<br>
+   name:{{p.name}}
+   </div>
+
 

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Person } from '../person';
+import { BackendService } from '../backend.service';
 // import { BackendServiceService } from '../backend-service.service';
 
 @Component({
@@ -8,19 +9,15 @@ import { Person } from '../person';
   styleUrls: ['./person-list.component.css']
 })
 export class PersonListComponent implements OnInit {
-
   persons:Person[] = [];
+
   selPersons:number=0;
-
-  // constructor(private backenService: BackendServiceService) {
-  // // }
-
+// backendServiceObj:BackendService
+  constructor(private backend2:BackendService)
+  {}
   ngOnInit() {
-    this.persons.push(new Person(1,"Tejsingh",100)) 
-    this.persons.push(new Person(2,"Mohan",540)) 
-    this.persons.push(new Person(3,"Shayam",500)) 
-    this.persons.push(new Person(4,"Mohan",200)) 
-     
+
+   this.persons=  this.backend2.getPersons();
   
   }
 

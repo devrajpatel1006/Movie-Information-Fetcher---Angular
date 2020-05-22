@@ -9,6 +9,13 @@ import { Component, OnInit } from '@angular/core';
 export class DirectivePraticeComponent implements OnInit {
   testObj = {id:6,name:"testing",price:199};
   selectedCountry:Number;
+  persons =[
+    
+      {id:1,name:"tej"},
+      {id :2,name:"tri"},
+      {id:3,name:"tushar"}
+    
+  ]
   constructor() { }
 
   ngOnInit(): void {

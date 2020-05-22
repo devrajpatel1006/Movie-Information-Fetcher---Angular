@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Person } from './person';
+import { Person, MoviesResponse, MovieResponse } from './person';
 import { of, Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
@@ -26,10 +26,10 @@ validateUser(username:string,password:string):Observable<boolean>{
        }
 }
 
-getMovies(term:string):Observable<any>
+getMovies(term:string):Observable<MoviesResponse>
  { 
   let u ="https://www.omdbapi.com/?apikey=8daf3d32&s="+ term; 
-  return this.httpObj.get<any>(u)
+  return this.httpObj.get<MoviesResponse>(u)
  }
 
 

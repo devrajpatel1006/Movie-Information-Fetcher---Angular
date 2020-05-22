@@ -11,15 +11,17 @@ export class TestClass{
     this.age=Math.random()
   }
 }
-// export interface MoviesResponse {
-//   Search: Array<MovieResponse>;
-//   totalResults: number;
-//   Response: string;
-// }
 
-// export interface MovieResponse {
-//   Title: string;
-//   Year: number;
-//   Type: string;
-//   Poster: string;
-// }
+export interface MoviesResponse{
+  Search: Array<MovieResponse>;
+  totalResults:number;
+  Response :string;
+}
+
+export interface MovieResponse{
+ Title:string,
+ Year :number,
+ Type:string,
+ Poster:string;
+
+}

@@ -14,3 +14,21 @@
      'makegrey':this.testObj.price>=100
     }">ngClass2"</div>
 <div [class.makered]="this.testObj.price>=100">ngClass3</div>
+
+<h1>ngIf</h1>
+<div *ngIf="(this.testObj.price>100)">ngIf example 1</div>
+<div *ngIf="(this.testObj.price >100) then content_test">ngIf example 3</div>
+
+<!--<div *ngIf="(this.testObj.price <100);else else_content">ngIf example 2</div>
+
+
+<div *ngIf="(this.testObj.price <100) then content_test else else_content">ngIf example 4</div>
+-->
+
+<ng-template #else_content>
+<div>this is else content of ngif example 2</div>
+<ng-template>
+
+<ng-template #content_test>
+<div>this is then if content of ngif example 3</div>
+<ng-template>

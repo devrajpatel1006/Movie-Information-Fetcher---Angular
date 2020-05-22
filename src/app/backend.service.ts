@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
 import { Person } from './person';
 import { of, Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class BackendService {
 
-  constructor() { }
+  constructor(private httpObj:HttpClient) { }
   getPersons():Observable<Array<Person>>{
   const persons:Person[]=[];
 persons.push(new Person(1,"Tejsingh",100)) 
@@ -24,5 +25,12 @@ validateUser(username:string,password:string):Observable<boolean>{
          return of(false);
        }
 }
+
+getMovies(term:string):Observable<any>
+ { 
+  let u ="https://www.omdbapi.com/?apikey=8daf3d32&s="+ term; 
+  return this.httpObj.get<any>(u)
+ }
+
 
 }

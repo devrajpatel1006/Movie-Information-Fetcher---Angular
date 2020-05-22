@@ -13,6 +13,7 @@ import { DirectivePraticeComponent } from './directive-pratice/directive-pratice
 import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component'
 import { TestClass } from './person';
+import { MoviesComponent } from './movies/movies.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { TestClass } from './person';
        PersonListComponent,
        DirectivePraticeComponent,
        LoginComponent,
+       MoviesComponent,
  
       ],
   imports: [
@@ -30,7 +32,8 @@ import { TestClass } from './person';
    // AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [
     {

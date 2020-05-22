@@ -7,6 +7,7 @@
  <div [style.backgroundColor]="getColor()">Testing ngStyle3</div>
  <div [ngStyle]="getColorObj()">Testing ngStyle 4</div> 
  
+
  <h1>ngClass</h1>
 <div [ngClass]="{'makered':this.testObj.id<=1}">ngClass1</div>
 <div [ngClass]="{
@@ -17,18 +18,39 @@
 
 <h1>ngIf</h1>
 <div *ngIf="(this.testObj.price>100)">ngIf example 1</div>
-<div *ngIf="(this.testObj.price >100) then content_test">ngIf example 3</div>
-
-<!--<div *ngIf="(this.testObj.price <100);else else_content">ngIf example 2</div>
+<div *ngIf="(this.testObj.price <100);else else_content">ngIf example 2</div>
 
 
-<div *ngIf="(this.testObj.price <100) then content_test else else_content">ngIf example 4</div>
--->
-
+<!--
 <ng-template #else_content>
 <div>this is else content of ngif example 2</div>
 <ng-template>
+-->
+<h1>ngSwitch</h1>
 
-<ng-template #content_test>
+<select [(ngModel)]="selectedCountry">
+  <option value='0'>--select--</option>
+  <option value='1'>India</option>
+  <option value='2'>Bharat</option>
+  <option value='3'>Maha</option>
+</select>  
+
+<div [ngSwitch]="selectedCountry">
+ <div *ngSwitchCase="1">output1</div>
+ <div *ngSwitchCase="2">output2</div>
+ <div *ngSwitchCase="3">output3</div>
+ <div *ngSwitchCase="4">output4</div>
+ <div *ngSwitchDefault>Wrong Selection</div>
+
+
+
+ <!--<div *ngIf="(this.testObj.price >100) then content_test">ngIf example 3</div>
+
+
+<div *ngIf="(this.testObj.pr ice <100) then content_test else else_content">ngIf example 4</div>
+-->
+<!--<ng-template #content_test>
 <div>this is then if content of ngif example 3</div>
 <ng-template>
+-->
+

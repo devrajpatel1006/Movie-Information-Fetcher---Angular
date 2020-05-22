@@ -1,12 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 
+
 @Component({
   selector: 'app-directive-pratice',
   templateUrl: './directive-pratice.component.html',
   styleUrls: ['./directive-pratice.component.css']
 })
 export class DirectivePraticeComponent implements OnInit {
-  testObj = {id:6,name:"testing",price:199}
+  testObj = {id:6,name:"testing",price:199};
+  selectedCountry:Number;
   constructor() { }
 
   ngOnInit(): void {

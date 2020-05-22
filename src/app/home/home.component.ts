@@ -13,7 +13,7 @@ export class HomeComponent implements OnInit {
       alert(v2.age *100); 
   }
  
-  ngOnInit() {
+  ngOnInit() {  
   }
 
 }

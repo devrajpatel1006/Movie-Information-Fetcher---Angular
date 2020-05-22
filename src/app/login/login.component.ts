@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BackendService } from '../backend.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -12,7 +13,7 @@ export class LoginComponent implements OnInit {
   message:string;
 
 
-  constructor(private backend2:BackendService) {}
+  constructor(private backend2:BackendService,private router:Router) {}
 
   ngOnInit() {  }
   onLoginClicked()
@@ -22,9 +23,10 @@ export class LoginComponent implements OnInit {
       m=>{
 
         if(m)
-        this.message="Valid User";
+          this.router.navigate(['/home']);
+        // this.message="Valid User";
         else{
-          this.message="Invalid User";
+        //  this.message="Invalid User";
         }}
    
    

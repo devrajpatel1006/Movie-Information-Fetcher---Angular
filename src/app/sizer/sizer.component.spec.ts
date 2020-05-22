@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TejComponent } from './tej.component';
+import { SizerComponent } from './sizer.component';
 
-describe('TejComponent', () => {
-  let component: TejComponent;
-  let fixture: ComponentFixture<TejComponent>;
+describe('SizerComponent', () => {
+  let component: SizerComponent;
+  let fixture: ComponentFixture<SizerComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TejComponent ]
+      declarations: [ SizerComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(TejComponent);
+    fixture = TestBed.createComponent(SizerComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

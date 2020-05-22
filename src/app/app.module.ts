@@ -7,14 +7,16 @@ import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 //import { AboutComponent } from './about/about.component';
-import { TejComponent } from './tej/tej.component';
+import { PersonListComponent } from './person-list/person-list.component';
+import { PersonComponent } from './person/person.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
   //  AboutComponent,
-    TejComponent,
+       PersonComponent,
+       PersonListComponent,
   ],
   imports: [
     BrowserModule,

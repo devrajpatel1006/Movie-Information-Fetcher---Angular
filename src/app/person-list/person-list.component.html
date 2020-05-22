@@ -1,0 +1,5 @@
+<p>Persons Data</p>
+<p>Seletecd : {{selPersons}} </p>
+<div *ngFor="let p of persons">
+  <app-person [per]="p" (counterEvent)="personCountHandled($event)"></app-person>
+</div>

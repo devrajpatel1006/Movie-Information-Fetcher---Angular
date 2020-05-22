@@ -6,11 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'demo';
-  sizeDefaultSize:number=20;
+  title = 'AngularApp3';
+  sizerDefaultSize = 20;
 
-  sizeHandler($event  )
-  {
+  sizeHandler($event){
     alert($event.size);
   }
 }

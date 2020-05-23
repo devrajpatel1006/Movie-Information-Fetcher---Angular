@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
     // var result = this.backend2.validateUser(this.username,this.password)
     this.backend2.validateUser(this.username,this.password).subscribe(
       m=>{
-
+          console.log(m)
         if(m)
           this.router.navigate(['/home']);
         // this.message="Valid User";

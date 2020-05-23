@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Person, MoviesResponse, MovieResponse } from './person';
 import { of, Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({
@@ -17,13 +18,35 @@ persons.push(new Person(3,"Shayam",500))
 persons.push(new Person(4,"Mohan",200)) 
 return of(persons);
 }
-validateUser(username:string,password:string):Observable<boolean>{
-  if(username=="admin" && password=="admin")
-       return of(true)
+validateUser(username:string,password:string):Observable<boolean> {
+  let u ="http://localhost:8000/auth/login";
+return this.httpObj.post<any>(u,{email:username,password:password})
+ .pipe(
+  map(m=>{
+     if( m.access_token){
+       localStorage.setItem('token',m.access_token);
+       localStorage.setItem('user',username);
+      return true;
+     }
+     else{
+       return false;
+     }
+  })
+   )
+ }
+  // .subscribe(
+  // m=>console.log(m))
+//   return of(false)
+//  )
+//   // if(username=="admin" && password=="admin")
+  //      return of(true)
 
-       else{
-         return of(false);
-       }
+  //      else{
+  //        return of(false);
+  //      }
+
+getName():string{
+  return localStorage.getItem('user');
 }
 
 getMovies(term:string):Observable<MoviesResponse>
@@ -32,5 +55,10 @@ getMovies(term:string):Observable<MoviesResponse>
   return this.httpObj.get<MoviesResponse>(u)
  }
 
+ logout():boolean{
+   localStorage.removeItem('user');
+   localStorage.removeItem('token');
+   return true;
+ }
 
 }

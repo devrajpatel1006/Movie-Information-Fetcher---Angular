@@ -17,6 +17,7 @@ import { MoviesComponent } from './movies/movies.component';
 import { NavComponent } from './nav/nav.component';
 import { AppRoutingModule } from './app-routing.module';
 import { PageNotFoundComponentComponent } from './page-not-found-component/page-not-found-component.component';
+import { LogoutComponent } from './logout/logout.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { PageNotFoundComponentComponent } from './page-not-found-component/page-
        MoviesComponent,
        NavComponent,
        PageNotFoundComponentComponent,
+       LogoutComponent,
  
       ],
   imports: [

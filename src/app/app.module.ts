@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 
 // import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 //import { AboutComponent } from './about/about.component';
@@ -18,6 +18,7 @@ import { NavComponent } from './nav/nav.component';
 import { AppRoutingModule } from './app-routing.module';
 import { PageNotFoundComponentComponent } from './page-not-found-component/page-not-found-component.component';
 import { LogoutComponent } from './logout/logout.component';
+import { HttpInterceptorService } from './http-interceptor.service';
 
 @NgModule({
   declarations: [
@@ -50,6 +51,11 @@ import { LogoutComponent } from './logout/logout.component';
   {
     provide :"MyTest",
     useClass:TestClass
+  },
+  {
+    provide:HTTP_INTERCEPTORS,
+    useClass:HttpInterceptorService,
+    multi:true
   }
 
   ],

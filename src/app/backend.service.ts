@@ -22,12 +22,15 @@ export class BackendService {
 
   }
   getPersons():Observable<Array<Person>>{
-  const persons:Person[]=[];
-persons.push(new Person(1,"Tejsingh",100)) 
-persons.push(new Person(2,"Mohan",540)) 
-persons.push(new Person(3,"Shayam",500)) 
-persons.push(new Person(4,"Mohan",200)) 
-return of(persons);
+//   const persons:Person[]=[];
+// persons.push(new Person(1,"Tejsingh",100)) 
+// persons.push(new Person(2,"Mohan",540)) 
+// persons.push(new Person(3,"Shayam",500)) 
+// persons.push(new Person(4,"Mohan",200)) 
+// return of(persons);
+ let u = "http://localhost:8000/products";
+ return this.httpObj.get<any>(u);
+
 }
 validateUser(username:string,password:string):Observable<boolean> {
   let u ="http://localhost:8000/auth/login";

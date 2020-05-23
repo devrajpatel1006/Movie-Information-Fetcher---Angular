@@ -20,6 +20,9 @@ import { PageNotFoundComponentComponent } from './page-not-found-component/page-
 import { LogoutComponent } from './logout/logout.component';
 import { HttpInterceptorService } from './http-interceptor.service';
 import { HttpErrorInterceptorService } from './http-error-interceptor.service';
+// import { MyNgIfDirective } from './my-ng-if.directive';
+// import { MyTestPipePipe } from './my-test-pipe.pipe';
+// import { MyhighligterDirective } from './myhighligter.directive';
 
 @NgModule({
   declarations: [
@@ -34,6 +37,9 @@ import { HttpErrorInterceptorService } from './http-error-interceptor.service';
        NavComponent,
        PageNotFoundComponentComponent,
        LogoutComponent,
+      //  MyNgIfDirective,
+      //  MyTestPipePipe,
+      //  MyhighligterDirective,
  
       ],
   imports: [

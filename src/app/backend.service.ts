@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Person, MoviesResponse, MovieResponse } from './person';
-import { of, Observable } from 'rxjs';
+import { of, Observable, BehaviorSubject } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 
@@ -8,8 +8,19 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class BackendService {
+  userLoggedInSource=new BehaviorSubject(false);
+  userLoggedInObs=this.userLoggedInSource.asObservable();//part of rxjs 
 
-  constructor(private httpObj:HttpClient) { }
+  constructor(private httpObj:HttpClient) { 
+   if(localStorage.getItem('token'))
+     {
+        this.userLoggedInSource.next(true);
+     }
+     else{
+       this.userLoggedInSource.next(false);
+     }
+
+  }
   getPersons():Observable<Array<Person>>{
   const persons:Person[]=[];
 persons.push(new Person(1,"Tejsingh",100)) 
@@ -26,6 +37,7 @@ return this.httpObj.post<any>(u,{email:username,password:password})
      if( m.access_token){
        localStorage.setItem('token',m.access_token);
        localStorage.setItem('user',username);
+       this.userLoggedInSource.next(true);
       return true;
      }
      else{
@@ -58,7 +70,13 @@ getMovies(term:string):Observable<MoviesResponse>
  logout():boolean{
    localStorage.removeItem('user');
    localStorage.removeItem('token');
+   this.userLoggedInSource.next(false);
    return true;
  }
+IsAuthenticated():boolean{
+  if(localStorage.getItem('token'))
+    return true;
+  else 
+  return false;
 
-}
+}}

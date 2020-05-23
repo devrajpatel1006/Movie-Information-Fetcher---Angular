@@ -19,6 +19,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { PageNotFoundComponentComponent } from './page-not-found-component/page-not-found-component.component';
 import { LogoutComponent } from './logout/logout.component';
 import { HttpInterceptorService } from './http-interceptor.service';
+import { HttpErrorInterceptorService } from './http-error-interceptor.service';
 
 @NgModule({
   declarations: [
@@ -55,6 +56,11 @@ import { HttpInterceptorService } from './http-interceptor.service';
   {
     provide:HTTP_INTERCEPTORS,
     useClass:HttpInterceptorService,
+    multi:true
+  },
+  {
+    provide:HTTP_INTERCEPTORS,
+    useClass:HttpErrorInterceptorService,
     multi:true
   }
 
